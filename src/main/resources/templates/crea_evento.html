@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crea Evento</title>
+</head>
+<body>
+<h1>Crea Nuovo Evento</h1>
+<form th:action="@{/eventi}" th:object="${evento}" method="post">
+    <label>Nome: <input type="text" th:field="*{nome}" /></label><br>
+    <label>Descrizione: <input type="text" th:field="*{descrizione}" /></label><br>
+    <label>Data: <input type="text" th:field="*{data}" /></label><br>
+    <label>Posti Disponibili: <input type="number" th:field="*{postiDisponibili}" /></label><br>
+    <button type="submit">Salva</button>
+</form>
+</body>
+</html>

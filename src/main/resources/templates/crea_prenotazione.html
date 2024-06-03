@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crea Prenotazione</title>
+</head>
+<body>
+<h1>Crea Nuova Prenotazione</h1>
+<form th:action="@{/prenotazioni}" th:object="${prenotazione}" method="post">
+    <label>Nome Utente: <input type="text" th:field="*{nomeUtente}" /></label><br>
+    <label>Evento ID: <input type="number" th:field="*{eventoId}" /></label><br>
+    <button type="submit">Salva</button>
+</form>
+</body>
+</html>

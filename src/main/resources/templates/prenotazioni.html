@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prenotazioni</title>
+</head>
+<body>
+<h1>Lista Prenotazioni</h1>
+<a th:href="@{/prenotazioni/crea}">Crea nuova prenotazione</a>
+<table>
+    <tr>
+        <th>Nome Utente</th>
+        <th>Evento</th>
+        <th>Azioni</th>
+    </tr>
+    <tr th:each="prenotazione : ${prenotazioni}">
+        <td th:text="${prenotazione.nomeUtente}">Nome Utente</td>
+        <td th:text="${prenotazione.eventoId}">Evento</td>
+        <td>
+            <a th:href="@{/prenotazioni/elimina/{id}(id=${prenotazione.id})}">Elimina</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
